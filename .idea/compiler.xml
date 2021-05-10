@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="cadastro" target="1.8" />
+      <module name="ifood" target="1.5" />
+      <module name="marketplace" target="11" />
+      <module name="pedido" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cadastro" options="-parameters -Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.suppressGeneratorVersionInfoComment=true" />
+      <module name="marketplace" options="-parameters" />
+      <module name="pedido" options="-parameters" />
+    </option>
+  </component>
+</project>
