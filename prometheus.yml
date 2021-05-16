@@ -34,4 +34,4 @@ scrape_configs:
     # scheme defaults to 'http'.
     scrape_interval:     5s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
     static_configs:
-    - targets: ['localhost:8080']
+    - targets: ['host.docker.internal:8080']

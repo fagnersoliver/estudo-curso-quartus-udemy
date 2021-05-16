@@ -1,5 +1,6 @@
 package com.github.fagner.ifood.mp;
 
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -25,5 +26,5 @@ public class RestauranteResource {
     public Multi<PratoDTO> buscarPratos(@PathParam("idRestaurante") Long idRestaurante) {
         return Prato.findAll(client, idRestaurante);
     }
-
+ 
 }

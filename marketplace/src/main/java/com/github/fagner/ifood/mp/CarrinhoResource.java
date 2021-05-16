@@ -34,9 +34,10 @@ public class CarrinhoResource {
 
     //esta cricando o fluxo para fazer a inserção no kafka	
     //Inclui o pedido na fila 
-    @Inject
-    @Channel("pedidos")
-    Emitter<PedidoRealizadoDTO> emitterPedido;
+    
+   // @Inject
+   //  @Channel("pedidos")
+   //  Emitter<PedidoRealizadoDTO> emitterPedido;
 
     @GET
     public Uni<List<PratoCarrinho>> buscarcarrinho() {
@@ -69,7 +70,7 @@ public class CarrinhoResource {
         restaurante.nome = "nome restaurante";
         pedido.restaurante = restaurante;
         //Enviando o pedido para o kafka
-        emitterPedido.send(pedido);
+       // emitterPedido.send(pedido);
         
         return PratoCarrinho.delete(client, cliente);
     }

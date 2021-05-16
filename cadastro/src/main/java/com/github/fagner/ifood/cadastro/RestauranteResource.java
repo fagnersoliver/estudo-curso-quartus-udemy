@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.json.bind.Jsonb;
@@ -92,6 +93,9 @@ public class RestauranteResource {
 		Jsonb create = JsonbBuilder.create();
 		String json = create.toJson(restaurante);
 		emitter.send(json);
+		
+		System.out.println(json);
+		
 
 		return Response.status(Status.CREATED).build();
 	}

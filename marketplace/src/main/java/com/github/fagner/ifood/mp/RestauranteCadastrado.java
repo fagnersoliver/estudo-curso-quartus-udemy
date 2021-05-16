@@ -7,6 +7,7 @@ import javax.json.bind.JsonbBuilder;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
+import io.smallrye.reactive.messaging.annotations.Blocking;
 import io.vertx.mutiny.pgclient.PgPool;
 
 @ApplicationScoped
@@ -17,6 +18,7 @@ public class RestauranteCadastrado {
 	PgPool pgPool;
 
 	@Incoming("restaurantes")
+	@Blocking
 	public void receberRestaurante(String json) {
 
 		// Verfifica erro ao fazer a inserção no banco de dados.
@@ -24,6 +26,6 @@ public class RestauranteCadastrado {
 		Restaurante restaurante = create.fromJson(json, Restaurante.class);
 		restaurante.persist(pgPool);
 
-		// System.out.println(json);
+		 System.out.println(json);
 	}
 }
